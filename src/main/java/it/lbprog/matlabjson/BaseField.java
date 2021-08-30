@@ -38,6 +38,16 @@ public abstract class BaseField<T> {
         this.mwtype = mwtype;
     }
 
+    protected final void init(MatlabJsonConverter.MatLabType type, List<T> values,List<Integer> dimensions)
+    {
+        setMwtype(type);
+        setMwdata(values);
+        if (dimensions!=null)
+        {
+            setSize(dimensions);
+        }
+    }
+
     private List<T> mwdata;
     private List<Integer> mwsize;
     private MatlabJsonConverter.MatLabType mwtype;
